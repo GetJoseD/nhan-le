@@ -1,0 +1,585 @@
+/* ==========================================================================
+   MEET NHÂN LÊ — STYLESHEET
+   ==========================================================================
+
+   This file controls how the site looks. You do not need to touch it to
+   add photos, memories, or text. Only come in here if you want to change
+   colours, spacing, or type.
+
+   WHERE THE COLOURS COME FROM
+   ---------------------------
+   They are taken from Đông Hồ folk woodblock printing, where every colour
+   was made from something real: red from gravel stone, yellow from the
+   sophora flower, blue-green from copper rust and indigo leaf, black from
+   burnt bamboo leaves, and the warm shimmering paper from crushed
+   seashell (điệp).
+
+   Deliberately NOT used: stark white, and the heavy white-and-incense
+   imagery of a Vietnamese funeral. This page is about a living person and
+   the people connected to him, so it is warm rather than mournful. If the
+   family ever wants it to become a formal memorial, that is a decision
+   for them to make on purpose, not something built in by default.
+   ========================================================================== */
+
+:root {
+
+  /* ---- COLOURS. Change a value here and it changes everywhere. ---------- */
+  --paper:      #FBF3E9;  /* điệp paper — the warm background            */
+  --paper-deep: #F4E7D6;  /* a slightly deeper paper, for panels          */
+  --ink:        #2B2529;  /* burnt bamboo black — all body text           */
+  --ink-soft:   #6B5F62;  /* quieter text, captions, notes                */
+  --lotus:      #C4557F;  /* lotus pink — the main accent                 */
+  --gold:       #C08A2E;  /* sophora yellow — small highlights            */
+  --jade:       #3D7266;  /* copper rust green — the second accent        */
+  --crimson:    #9E2A32;  /* gravel red — used very sparingly             */
+
+  /* ---- TYPE ------------------------------------------------------------
+     Be Vietnam Pro was designed by Vietnamese type designers and handles
+     stacked accents (ế ộ ữ ằ) correctly. It is listed as a fallback after
+     the display face on purpose, so any character the display face is
+     missing still renders properly instead of breaking.
+
+     IF ANY VIETNAMESE ACCENT EVER LOOKS WRONG OR CUT OFF:
+     change --font-display below to  'Be Vietnam Pro', Georgia, serif
+     and the problem will go away.                                         */
+  --font-display: 'Fraunces', 'Be Vietnam Pro', Georgia, serif;
+  --font-body:    'Be Vietnam Pro', system-ui, -apple-system, sans-serif;
+
+  /* ---- SPACING --------------------------------------------------------- */
+  --gutter: clamp(1.25rem, 5vw, 4rem);
+  --measure: 34rem;   /* how wide a paragraph is allowed to get */
+}
+
+
+/* ==========================================================================
+   THE LANGUAGE SWITCH — how the two languages hide and show
+   --------------------------------------------------------------------------
+   Anything marked data-lang-vi disappears while the site is in English,
+   and anything marked data-lang-en disappears while it is in Vietnamese.
+   This is the entire mechanism. Please leave these four lines alone.
+   ========================================================================== */
+
+html[data-lang="en"] [data-lang-vi] { display: none !important; }
+html[data-lang="vi"] [data-lang-en] { display: none !important; }
+
+
+/* ==========================================================================
+   FOUNDATIONS
+   ========================================================================== */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background-color: var(--paper);
+  /* The faint shimmer of điệp paper. Two very soft washes of colour. */
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% 0%,   rgba(196, 85, 127, .07), transparent 60%),
+    radial-gradient(ellipse 70% 60% at 90% 25%,  rgba(192, 138, 46, .07), transparent 60%),
+    radial-gradient(ellipse 90% 40% at 40% 100%, rgba(61, 114, 102, .06), transparent 60%);
+  background-attachment: fixed;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: clamp(1rem, .96rem + .2vw, 1.0625rem);
+  line-height: 1.72;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: inherit; }
+
+code {
+  font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+  font-size: .85em;
+  background: rgba(43, 37, 41, .07);
+  padding: .1em .35em;
+  border-radius: 3px;
+}
+
+/* Keyboard users must always be able to see where they are. */
+:focus-visible {
+  outline: 2px solid var(--lotus);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: .5rem;
+  background: var(--ink);
+  color: var(--paper);
+  padding: .6rem 1rem;
+  border-radius: 4px;
+  z-index: 100;
+  text-decoration: none;
+}
+.skip-link:focus { left: .5rem; }
+
+
+/* ==========================================================================
+   HEADER
+   ========================================================================== */
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.5rem var(--gutter);
+  max-width: 74rem;
+  margin: 0 auto;
+}
+
+.site-mark {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  letter-spacing: .01em;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.lang-switch {
+  display: flex;
+  border: 1px solid rgba(43, 37, 41, .18);
+  border-radius: 999px;
+  padding: 3px;
+  background: rgba(255, 255, 255, .4);
+}
+
+.lang-btn {
+  font-family: var(--font-body);
+  font-size: .8125rem;
+  font-weight: 500;
+  letter-spacing: .01em;
+  padding: .4rem .85rem;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: background-color .2s ease, color .2s ease;
+}
+.lang-btn:hover { color: var(--ink); }
+
+/* The button for the language you are currently reading is filled in. */
+html[data-lang="en"] .lang-btn[data-set-lang="en"],
+html[data-lang="vi"] .lang-btn[data-set-lang="vi"] {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+
+/* ==========================================================================
+   THE OPENING — portrait and name
+   ========================================================================== */
+
+.opening {
+  max-width: 74rem;
+  margin: 0 auto;
+  padding: clamp(1rem, 4vw, 3rem) var(--gutter) clamp(2rem, 6vw, 4rem);
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  gap: clamp(1.5rem, 5vw, 4rem);
+  align-items: center;
+}
+
+.opening-portrait {
+  position: relative;
+  border-radius: 3px;
+  overflow: hidden;
+  /* A soft lacquer-like frame rather than a hard border. */
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.6),
+    0 18px 40px -22px rgba(43, 37, 41, .55);
+}
+
+.opening-portrait img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+/* Shown only when the portrait file has not been added yet. */
+.portrait-missing { display: none; }
+.opening-portrait.is-empty {
+  background: var(--paper-deep);
+  aspect-ratio: 4 / 5;
+  display: grid;
+  place-items: center;
+  box-shadow: inset 0 0 0 1px rgba(43,37,41,.12);
+}
+.opening-portrait.is-empty img { display: none; }
+.opening-portrait.is-empty .portrait-missing {
+  display: block;
+  margin: 0;
+  padding: 1.5rem;
+  text-align: center;
+  font-size: .875rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+.eyebrow {
+  margin: 0 0 1rem;
+  font-size: .75rem;
+  font-weight: 500;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--jade);
+}
+
+.display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(3rem, 9vw, 5.5rem);
+  line-height: .96;
+  letter-spacing: -.015em;
+  margin: 0 0 1.25rem;
+  /* Vietnamese names carry accents above the letters. Give them room. */
+  padding-top: .12em;
+}
+
+.lede {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.125rem, 1rem + .7vw, 1.5rem);
+  line-height: 1.5;
+  color: var(--ink);
+  max-width: 26rem;
+  margin: 0;
+}
+
+
+/* ==========================================================================
+   DIVIDER — the lotus between sections
+   ========================================================================== */
+
+.divider {
+  display: grid;
+  place-items: center;
+  color: var(--lotus);
+  opacity: .55;
+  padding: clamp(1rem, 4vw, 2.5rem) 0;
+}
+
+
+/* ==========================================================================
+   PANELS AND TEXT
+   ========================================================================== */
+
+.panel {
+  max-width: 74rem;
+  margin: 0 auto;
+  padding: 0 var(--gutter) clamp(2rem, 6vw, 4rem);
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.65rem, 1.2rem + 1.6vw, 2.5rem);
+  line-height: 1.15;
+  letter-spacing: -.01em;
+  margin: 0 0 .75rem;
+  padding-top: .1em;
+}
+
+.section-note {
+  margin: 0 0 2rem;
+  color: var(--ink-soft);
+  font-size: .9375rem;
+  max-width: var(--measure);
+}
+
+.prose { max-width: var(--measure); }
+.prose p { margin: 0 0 1.35em; }
+.prose p:last-child { margin-bottom: 0; }
+
+.prose-center {
+  max-width: 36rem;
+  margin: 0 auto 2rem;
+  text-align: center;
+  color: var(--ink-soft);
+}
+
+
+/* ==========================================================================
+   PHOTO WALL
+   ========================================================================== */
+
+.photo-wall {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: clamp(1rem, 2.5vw, 1.75rem);
+}
+
+.photo {
+  margin: 0;
+  background: #fff;
+  padding: .6rem .6rem 0;
+  border-radius: 2px;
+  box-shadow: 0 12px 28px -18px rgba(43, 37, 41, .6);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.photo:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 34px -18px rgba(43, 37, 41, .55);
+}
+
+.photo img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 1px;
+}
+
+/* Used for placeholder tiles, before real photographs are added. */
+.photo-blank {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: var(--paper-deep);
+  display: grid;
+  place-items: center;
+  color: var(--ink-soft);
+  font-size: .8125rem;
+  box-shadow: inset 0 0 0 1px rgba(43,37,41,.08);
+}
+
+.photo figcaption {
+  padding: .7rem .2rem .8rem;
+  font-size: .8125rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+
+/* ==========================================================================
+   MEMORY WALL — the notes people leave
+   --------------------------------------------------------------------------
+   Each note is labelled with how that person knows Nhân. The label is not
+   decoration: it is the point of the page.
+   ========================================================================== */
+
+.memory-wall {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 19rem), 1fr));
+  gap: clamp(1rem, 2.5vw, 1.5rem);
+}
+
+.memory {
+  background: #fff;
+  border-radius: 3px;
+  padding: 1.5rem 1.5rem 1.35rem;
+  box-shadow: 0 12px 26px -20px rgba(43, 37, 41, .7);
+  /* The coloured edge on the left changes with the relationship. */
+  border-left: 3px solid var(--lotus);
+  display: flex;
+  flex-direction: column;
+  gap: .9rem;
+}
+
+.memory-relation {
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+  color: var(--lotus);
+}
+
+.memory-text {
+  margin: 0;
+  font-size: .96875rem;
+  line-height: 1.68;
+}
+
+.memory-name {
+  margin: 0;
+  margin-top: auto;
+  font-size: .8125rem;
+  color: var(--ink-soft);
+}
+
+/* The four relationship colours. Set in assets/memories.js by writing
+   family / friend / school / stranger as the "circle" for each memory. */
+.memory[data-circle="family"]   { border-left-color: var(--crimson); }
+.memory[data-circle="family"]   .memory-relation { color: var(--crimson); }
+.memory[data-circle="friend"]   { border-left-color: var(--lotus); }
+.memory[data-circle="friend"]   .memory-relation { color: var(--lotus); }
+.memory[data-circle="school"]   { border-left-color: var(--gold); }
+.memory[data-circle="school"]   .memory-relation { color: var(--gold); }
+.memory[data-circle="stranger"] { border-left-color: var(--jade); }
+.memory[data-circle="stranger"] .memory-relation { color: var(--jade); }
+
+
+/* ==========================================================================
+   THE INVITATION
+   ========================================================================== */
+
+.invite {
+  text-align: center;
+}
+
+.invite-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .85rem;
+  justify-content: center;
+}
+
+.button {
+  display: inline-block;
+  font-size: .9375rem;
+  font-weight: 500;
+  text-decoration: none;
+  padding: .8rem 1.5rem;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--paper);
+  transition: transform .2s ease, opacity .2s ease;
+}
+.button:hover { transform: translateY(-1px); opacity: .9; }
+
+.button-quiet {
+  background: transparent;
+  color: var(--ink);
+  box-shadow: inset 0 0 0 1px rgba(43, 37, 41, .25);
+}
+
+.qr {
+  margin: 2.5rem auto 0;
+  width: 10rem;
+}
+.qr img { width: 100%; border-radius: 4px; }
+.qr-caption {
+  margin: .7rem 0 0;
+  font-size: .8125rem;
+  color: var(--ink-soft);
+}
+
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+
+.site-footer {
+  max-width: 74rem;
+  margin: 0 auto;
+  padding: clamp(2.5rem, 7vw, 5rem) var(--gutter) 3.5rem;
+  border-top: 1px solid rgba(43, 37, 41, .12);
+  text-align: center;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem 2rem;
+  justify-content: center;
+  margin-bottom: 1.75rem;
+}
+
+.footer-links a {
+  font-size: .9375rem;
+  text-decoration: none;
+  color: var(--jade);
+  border-bottom: 1px solid rgba(61, 114, 102, .35);
+  padding-bottom: 1px;
+  transition: color .2s ease, border-color .2s ease;
+}
+.footer-links a:hover { color: var(--ink); border-bottom-color: var(--ink); }
+
+.footer-note {
+  margin: 0;
+  font-size: .8125rem;
+  color: var(--ink-soft);
+}
+
+
+/* ==========================================================================
+   THE ACTION PAGE (action.html)
+   ========================================================================== */
+
+.action-intro {
+  max-width: 74rem;
+  margin: 0 auto;
+  padding: clamp(1rem, 4vw, 2.5rem) var(--gutter) clamp(1.5rem, 4vw, 3rem);
+}
+
+.action-intro .display { font-size: clamp(2.25rem, 6vw, 3.75rem); }
+
+.step {
+  max-width: var(--measure);
+  padding: 1.75rem 0;
+  border-top: 1px solid rgba(43, 37, 41, .14);
+}
+.step:first-of-type { border-top: 0; }
+
+.step h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.25rem;
+  margin: 0 0 .5rem;
+}
+
+.step p { margin: 0 0 .85rem; }
+.step p:last-child { margin-bottom: 0; }
+
+.step-why {
+  color: var(--ink-soft);
+  font-size: .9375rem;
+}
+
+/* The copy-and-send wording, set apart so it is obviously a thing to use. */
+.script {
+  margin: 0;
+  padding: 1.1rem 1.25rem;
+  background: rgba(255, 255, 255, .65);
+  border-left: 3px solid var(--gold);
+  border-radius: 0 3px 3px 0;
+  font-size: .9375rem;
+  line-height: 1.62;
+}
+
+.step a { color: var(--jade); }
+
+.callout {
+  max-width: var(--measure);
+  margin: 2.5rem 0 0;
+  padding: 1.35rem 1.5rem;
+  background: rgba(158, 42, 50, .06);
+  border-radius: 4px;
+  font-size: .9375rem;
+  line-height: 1.65;
+}
+.callout strong { color: var(--crimson); }
+
+
+/* ==========================================================================
+   SMALL SCREENS
+   ========================================================================== */
+
+@media (max-width: 46rem) {
+  .opening {
+    grid-template-columns: 1fr;
+    padding-top: 0;
+  }
+  .opening-portrait { max-width: 22rem; }
+  .lede { max-width: none; }
+  .site-header { flex-wrap: wrap; }
+}
+
+
+/* ==========================================================================
+   For anyone who has asked their device to reduce motion.
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+}
