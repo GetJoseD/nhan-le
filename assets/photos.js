@@ -17,12 +17,24 @@
    3. Save the file. That is all. The wall updates itself.
 
    ------------------------------------------------------------------
+   THE TWO LINES THAT MUST NEVER BE DELETED
+   ------------------------------------------------------------------
+
+   The line below that reads      const PHOTOS = [
+   and the line at the very end   ];
+
+   Everything you add goes BETWEEN those two lines. If either one goes
+   missing, the whole photo wall vanishes from the page without showing
+   any error at all. That is the most common thing to go wrong.
+
+   ------------------------------------------------------------------
    WHAT EACH LINE MEANS
    ------------------------------------------------------------------
 
-     file        the name of the picture file, exactly as you saved it.
-                 Write null (no quote marks) to show an empty placeholder
-                 tile instead of a picture.
+     file        the name of the picture file, exactly as you saved it,
+                 including whether it ends in .jpg or .JPG or .png.
+                 Capital letters matter once the site is online.
+                 Write null (no quote marks) to show an empty tile.
 
      caption_en  the English caption. Say WHO is in the photograph and
                  how they know Nhân. That is the point of this page.
@@ -50,10 +62,7 @@
 
 const PHOTOS = [
 
-  /* ---- START OF THE LIST ------------------------------------------------
-     What is below is placeholder tiles so you can see the layout.
-     Delete these and replace them with real photographs.
-     -------------------------------------------------------------------- */
+  /* ---- START OF THE LIST ---------------------------------------------- */
 
   {
     file:       "1.jpg",
@@ -93,15 +102,14 @@ const PHOTOS = [
 
   /* ---- END OF THE LIST --------------------------------------------------
      A COMMA goes after every }  EXCEPT the very last one.
-     If the page ever goes blank after you edit this file, a missing or
-     extra comma is almost always the reason.
 
-     Here is a real entry, ready to copy:
+     Here is a blank entry, ready to copy. Note the comma at the front,
+     which closes off whichever entry came before it:
 
      ,{
-       file:       "nhan-and-hieu.jpg",
-       caption_en: "Nhân and his brother Hiếu",
-       caption_vi: "Nhân và anh trai Hiếu"
+       file:       "",
+       caption_en: "",
+       caption_vi: ""
      }
      -------------------------------------------------------------------- */
 
