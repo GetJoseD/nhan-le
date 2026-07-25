@@ -56,39 +56,39 @@ const PHOTOS = [
      -------------------------------------------------------------------- */
 
   {
-    file:       null,
-    caption_en: "Nhân and his brother Hiếu",
-    caption_vi: "Nhân và anh trai Hiếu"
+    file:       1.jpg,
+    caption_en: "Nhân at home for the holidays",
+    caption_vi: "Nhân về nhà dịp lễ"
   },
 
   {
-    file:       null,
-    caption_en: "With his family in Houston",
-    caption_vi: "Cùng gia đình ở Houston"
+    file:       2.jpg,
+    caption_en: "Laughing at school",
+    caption_vi: "Cười ở trường"
   },
 
   {
-    file:       null,
-    caption_en: "Klein Forest, 2012",
-    caption_vi: "Trung học Klein Forest, năm 2012"
+    file:       3.jpg,
+    caption_en: "Acting tough, but we all know",
+    caption_vi: "Làm bộ ngầu, mà ai cũng biết tỏng"
   },
 
   {
-    file:       null,
-    caption_en: "An ordinary evening with friends",
-    caption_vi: "Một buổi tối bình thường bên bạn bè"
+    file:       4.jpg,
+    caption_en: "At school with a friend",
+    caption_vi: "Ở trường cùng một người bạn"
   },
 
   {
-    file:       null,
-    caption_en: "",
-    caption_vi: ""
+    file:       5.jpg,
+    caption_en: "Out with friends",
+    caption_vi: "Đi chơi cùng bạn bè"
   },
 
   {
-    file:       null,
-    caption_en: "",
-    caption_vi: ""
+    file:       6.jpg,
+    caption_en: "Presenting a project",
+    caption_vi: "Thuyết trình một bài dự án"
   }
 
   /* ---- END OF THE LIST --------------------------------------------------
