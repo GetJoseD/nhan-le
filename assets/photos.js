@@ -56,37 +56,37 @@ const PHOTOS = [
      -------------------------------------------------------------------- */
 
   {
-    file:       1.jpg,
+    file:       "1.jpg",
     caption_en: "Nhân at home for the holidays",
     caption_vi: "Nhân về nhà dịp lễ"
   },
 
   {
-    file:       2.jpg,
+    file:       "2.jpg",
     caption_en: "Laughing at school",
     caption_vi: "Cười ở trường"
   },
 
   {
-    file:       3.jpg,
+    file:       "3.jpg",
     caption_en: "Acting tough, but we all know",
     caption_vi: "Làm bộ ngầu, mà ai cũng biết tỏng"
   },
 
   {
-    file:       4.jpg,
+    file:       "4.jpg",
     caption_en: "At school with a friend",
     caption_vi: "Ở trường cùng một người bạn"
   },
 
   {
-    file:       5.jpg,
+    file:       "5.jpg",
     caption_en: "Out with friends",
     caption_vi: "Đi chơi cùng bạn bè"
   },
 
   {
-    file:       6.jpg,
+    file:       "6.jpg",
     caption_en: "Presenting a project",
     caption_vi: "Thuyết trình một bài dự án"
   }
