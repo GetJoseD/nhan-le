@@ -65,7 +65,6 @@ const MEMORIES = [
     text_vi:     "Tôi cố gắng nói ra điều này, cố gắng cất tiếng nói của mình, để chuyện này đừng xảy ra thêm một lần nào nữa. Có rất nhiều người đã chịu đau đớn mà không nói ra được. Họ không cất được tiếng nói của mình, nên tôi phải cất tiếng nói thay. Tôi muốn những chuyện như thế này phải chấm dứt. Ai trong chúng ta cũng mong được sống bình yên. Ai cũng có một cuộc đời. Ai cũng đáng quý như nhau.",
     name:        "Hiếu"
   },
-
   {
     circle:      "school",
     relation_en: "a classmate",
@@ -74,7 +73,6 @@ const MEMORIES = [
     text_vi:     "Nhân hay đi chơi với đám bạn thân lắm, lúc nào cũng thấy ở trong nhóm. Mình nhớ nói chuyện là Nhân vừa nói vừa cười suốt! Nhân thương đám bạn của mình lắm.",
     name:        "Q"
   },
-
   {
     circle:      "friend",
     relation_en: "a friend",
