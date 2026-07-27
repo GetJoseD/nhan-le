@@ -133,7 +133,7 @@ const PHOTOS = [
     file:       "13.jpg",
     caption_en: "Showing High School Pride!",
     caption_vi: "Tự hào áo trường!"
-  }
+  },
   {
     file:       "14.jpg",
     caption_en: "A night out with friends, no trouble was made!",
