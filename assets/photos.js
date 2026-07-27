@@ -138,6 +138,41 @@ const PHOTOS = [
     file:       "14.jpg",
     caption_en: "A night out with friends, no trouble was made!",
     caption_vi: "Một tối đi chơi cùng bạn bè — không quậy phá gì đâu nha!"
+  },
+  {
+    file:       "15.jpg",
+    caption_en: "Enjoying a massive meal with friends.",
+    caption_vi: "Một bữa thịnh soạn cùng bạn bè."
+  },
+
+  {
+    file:       "16.jpg",
+    caption_en: "Garage parties are the best. If you know, you know.",
+    caption_vi: "Tiệc trong ga-ra là nhất. Ai biết thì biết."
+  },
+
+  {
+    file:       "17.jpg",
+    caption_en: "Playing Bầu cua cá cọp trying to make some money!",
+    caption_vi: "Chơi bầu cua cá cọp, quyết kiếm chút tiền!"
+  },
+
+  {
+    file:       "18.jpg",
+    caption_en: "As groomsman for a close friend.",
+    caption_vi: "Làm phù rể cho một người bạn thân."
+  },
+
+  {
+    file:       "19.jpg",
+    caption_en: "Smiling and laughing everywhere he goes!",
+    caption_vi: "Đi đâu cũng cười nói vui vẻ!"
+  },
+
+  {
+    file:       "20.jpg",
+    caption_en: "Having a drink with a good friend.",
+    caption_vi: "Làm vài ly cùng một người bạn thân."
   }
 
   /* ---- END OF THE LIST --------------------------------------------------
