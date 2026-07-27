@@ -68,19 +68,19 @@ const MEMORIES = [
 
   {
     circle:      "school",
-    relation_en: "EXAMPLE — a classmate",
-    relation_vi: "VÍ DỤ — bạn học",
-    text_en:     "Replace this with something a real person sent in. The best ones are small and specific: what he said, what he did, what he would never let you pay for.",
-    text_vi:     "Hãy thay đoạn này bằng lời của một người thật. Những kỷ niệm hay nhất thường là những chuyện rất nhỏ và rất cụ thể: anh đã nói gì, đã làm gì, đã nhất định không cho ai trả tiền cái gì.",
+    relation_en: "Quynh — a classmate",
+    relation_vi: "Quynh — bạn học",
+    text_en:     "Nhân hung out with his boys a lot. Always in his group of friends. I remember he would always laugh while he talked! He loved his group of friends.",
+    text_vi:     "Nhân hay đi chơi với đám bạn thân lắm, lúc nào cũng thấy ở trong nhóm. Mình nhớ nói chuyện là Nhân vừa nói vừa cười suốt! Nhân thương đám bạn của mình lắm.",
     name:        ""
   },
 
   {
-    circle:      "stranger",
-    relation_en: "EXAMPLE — someone who never met him",
-    relation_vi: "VÍ DỤ — một người chưa từng gặp anh",
-    text_en:     "People who only heard about Nhân in the news write in too. Their notes belong here as much as anyone's. That is what this page is for.",
-    text_vi:     "Có những người chỉ biết đến Nhân qua bản tin cũng viết đôi dòng gửi về. Những lời ấy cũng có chỗ ở đây như của bất kỳ ai khác. Trang này lập ra chính là vì điều đó.",
+    circle:      "friend",
+    relation_en: "Hung — a friend",
+    relation_vi: "Hung — Bạn từ thuở nhỏ",
+    text_en:     "To some of us and me personally, Nhân is more than just a childhood best friend. He is someone we grow up with and become a part of my family through countless memories, laughter, and life's ups and downs. He is kind, trustworthy, and always there when you need him. His memories leaving a lasting impact that time and distance can never erase.",
+    text_vi:     "Với một số tụi mình, và với riêng mình, Nhân không chỉ là bạn thân từ thuở nhỏ. Nhân là người cùng mình lớn lên, rồi thành người trong nhà lúc nào không hay, qua biết bao kỷ niệm, bao tiếng cười, bao lúc thăng trầm. Nhân hiền, đáng tin, cần gì là có mặt. Những kỷ niệm về Nhân để lại dấu ấn mà thời gian hay khoảng cách cũng không bao giờ xóa nhòa được.",
     name:        ""
   }
 
