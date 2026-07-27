@@ -139,7 +139,6 @@ const PHOTOS = [
     caption_en: "A night out with friends, no trouble was made!",
     caption_vi: "Một tối đi chơi cùng bạn bè — không quậy phá gì đâu nha!"
   }
-
   /* ---- END OF THE LIST --------------------------------------------------
      A COMMA goes after every }  EXCEPT the very last one.
 
