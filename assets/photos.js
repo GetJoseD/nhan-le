@@ -98,6 +98,36 @@ const PHOTOS = [
     file:       "6.jpg",
     caption_en: "Presenting a project",
     caption_vi: "Thuyết trình một bài dự án"
+  },
+  {
+    file:       "7.jpg",
+    caption_en: "Resting after a very long day",
+    caption_vi: "Nghỉ ngơi sau một ngày dài mệt nhoài"
+  },
+  {
+    file:       "8.jpg",
+    caption_en: "Enjoying a meal with friends",
+    caption_vi: "Ăn uống vui vẻ cùng bạn bè"
+  },
+  {
+    file:       "9.jpg",
+    caption_en: "Someone snuck this photo of Nhan from the table!",
+    caption_vi: "Có người chụp lén Nhân từ bên kia bàn!"
+  },
+  {
+    file:       "10.jpg",
+    caption_en: "Hey, Nhan wants to know what is that over there?",
+    caption_vi: "Ê, Nhân hỏi cái gì đằng kia vậy?"
+  },
+  {
+    file:       "11.jpg",
+    caption_en: "Sweeping and cleaning up.",
+    caption_vi: "Đang quét dọn."
+  },
+  {
+    file:       "12.jpg",
+    caption_en: "Chilling at a food truck.",
+    caption_vi: "Ngồi chơi ở xe bán đồ ăn."
   }
 
   /* ---- END OF THE LIST --------------------------------------------------
