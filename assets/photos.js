@@ -128,6 +128,16 @@ const PHOTOS = [
     file:       "12.jpg",
     caption_en: "Chilling at a food truck.",
     caption_vi: "Ngồi chơi ở xe bán đồ ăn."
+  },
+  {
+    file:       "13.jpg",
+    caption_en: "Showing High School Pride!",
+    caption_vi: "Tự hào áo trường!"
+  }
+  {
+    file:       "14.jpg",
+    caption_en: "A night out with friends, no trouble was made!",
+    caption_vi: "Một tối đi chơi cùng bạn bè — không quậy phá gì đâu nha!"
   }
 
   /* ---- END OF THE LIST --------------------------------------------------
